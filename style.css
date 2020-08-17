@@ -950,6 +950,12 @@ text-align: center;
     padding: 5px 10px;
     border-radius: 7px;
   }
+  .form_box .textarea{
+    height: auto;
+    width: 90%;
+    margin-top: 10px;
+  }
+
 }
 
 @media screen and (max-width:425px){
@@ -979,8 +985,9 @@ text-align: center;
   .form_box .check_box{
     margin-left: 16%;
   }
-  .form_box textarea{
-    height: 100px;
+  .form_box .textarea{
+    height: auto;
+    width: 90%;
     margin-top: 10px;
   }
 }
