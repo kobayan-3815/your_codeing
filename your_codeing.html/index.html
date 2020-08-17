@@ -1,0 +1,581 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/5.3.7/css/swiper.min.css">
+  <title>your_codeing</title>
+</head>
+
+<!-------------実装を詰める事----------------->
+
+<!-- 大枠の幅、余白が似ている section は ’container’ などで囲う方が綺麗にまとまる気がする-->
+
+<!--------- section_1の画像の配置-------->
+<!-- 丸い画像は background-image で実装 -->
+<!-- text と img は display flex で実装 -->
+
+<!------------ body 自体の横揺れ原因 -------------->
+<!-- section ごとにディベロッパーツールで消して原因究明-->
+<!-- 結果、img の width の指定が原因 -->
+
+
+<!-----------各セクションの余白調整----------->
+<!-- px 指定でキッチリした余白に -->
+<!-- 結構 <br>(改行) を多様して text の余白は調整されていた -->
+
+<!-- table form_area の width がbodyからはみ出てる 幅によって可変する単位の方がいいかも？ -->
+<!-- width 100% で解決  左右に余白入れたいから90%で指定 -->
+
+
+<!-- swiper の表示のセンターがずれる なぜ？？ -->
+<!-- ------キャッシュをクリアしたら直った？--------- -->
+
+<!-- ブログカードのdate の位置を再考 -->
+<!-- position relative と position absolute で解決 -->
+
+<!-- swiperのレスポンシブで表示枚数を変えるには？ -->
+<!-- breakpoints:  で対応出来る -->
+
+<!-- swiper の矢印は  .swiper-container .swiper-button-prev,.swiper-container .swiper-button-next{
+  display: none;
+}  で非表示に-->
+
+
+<!-- ハンバーガーメニュー -->
+<!-- 実装は出来るけど、も少し勉強が必要かも -->
+
+<!--  googleフォームの埋め込み実装-->
+<!-- デフォルトなら早いけど、デザイン変えて埋め込みは時間かかる -->
+<!-- 自動返信メールの実装がまだ出来ない  要勉強！！ -->
+
+
+
+
+<body>
+
+  <!-- ---------ヘッダー------------- -->
+  <header>
+    <section class="header">
+      <article class="container">
+        <div class="header_ttl">
+          <img class="header_logo" src="your_codeing_img/Pink and Purple Events & party Entertainment Logo.png" alt="ロゴ"
+            width="47px" height="47px">
+          <h1 class="h1">ユアコーディング</h1>
+        </div>
+        <article class="header_link">
+          <ul>
+            <li><a href="#fature">特徴</a></li>
+            <li><a href="#price">価格</a></li>
+            <li><a class="h_contact_btn" href="#contact">お問い合わせ</a></li>
+          </ul>
+        </article>
+
+        <div class="contact_btn">
+          <a href="#contact">お問い合わせ</a>
+        </div>
+
+      </article>
+    </section>
+  </header>
+
+
+  <main>
+
+    <!-----------section_1   メインビジュアル------------>
+
+    <section class="section_1">
+
+      <!-- ハンバーガーメニュー -->
+      <!-- header内に記述だと綺麗に実装出来なかったので、main内に記述  position:fixed; で位置をheader内に移動-->
+      <div id="toggle">
+        <div class="one"></div>
+        <div class="two"></div>
+        <div class="three"></div>
+      </div>
+
+      <div id="menu">
+        <ul>
+          <li><a href="#fature">特徴</a></li>
+          <li><a href="#price">価格</a></li>
+          <li><a href="#contact">お問い合わせ</a></li>
+        </ul>
+      </div>
+
+      <div class="container">
+
+        <article class="section1_txtarea">
+          <h2 class="h2">
+            コーディングの手間を 最小に、デザインに注力 する助けに
+          </h2>
+          <div class="main_txtbox">
+            <p class="main_txt_1">ユアコーディングはコーディングに 特化したフリーランス
+            </p>
+            <p class="main_txt_2">デザインに注力されたい方の 助けになります
+            </p>
+          </div>
+          <div class="contact_btn">
+            <a href="#contact">お問い合わせ</a>
+          </div>
+        </article>
+
+        <div class="main_img">
+          <img src="your_codeing_img/manager.png" alt="メイン画像">
+        </div>
+
+      </div>
+    </section>
+
+    <!----------section_2  特徴------------------>
+    <!--  -->
+
+    <section class="section_2 fadein" id="fature">
+      <h3 class="h3">ユアコーディング3つの特徴</h3>
+      <p class="notes_ttl">FEATURES</p>
+
+      <article class="contents_area">
+        <div class="container">
+
+          <h4 class="h4">高速コーディング</h4>
+          <div class="contents fadein">
+            <div class="img_box">
+              <img class="c_img" src="your_codeing_img/cto.png" alt="コンテンツ画像です">
+            </div>
+            <div class="c_txtbox">
+              <p class="c_txt_1">コーディングに特化したフリーランスのため、 スピード感を持った開発が可能。</p>
+              <p class="c_txt_2">開発は常にスピードとの勝負です。<br> ユアコーディングはコーディングに特化しているため、<br> 素早く納品することで、クライアントがデザインに注力<br>
+                する助けとなります。</p>
+            </div>
+          </div>
+
+          <!------flex が逆なため、クラス名に second-------->
+          <h4 class="h4">高品質</h4>
+          <div class="contents_second fadein">
+
+            <div class="c_second_txtbox">
+              <p class="c_txt_1">正しいマークアップで、<br> 内部SEOに強いコーディングを<br> デフォルトで行います。</p>
+
+              <p class="c_txt_2">ユアコーディングでは、「予測しやすい」「再利用しやすい」 「保守しやすい」「拡張しやすい」と言った設計をもとに きちんとコーディングを行うため、納品後も安心です。</p>
+            </div>
+
+            <div class="img_box">
+              <img class="c_img" src="your_codeing_img/building_website.png" alt="コンテンツ画像です">
+            </div>
+          </div>
+
+          <h4 class="h4">迅速なレスポンス</h4>
+          <div class="contents fadein">
+
+            <div class="img_box">
+              <img class="c_img" src="your_codeing_img/new_message.png" alt="コンテンツ画像です">
+            </div>
+
+            <div class="c_txtbox">
+              <p class="c_txt_1">原則いただいたメッセージは、<br> 業務時間内であれば6時間以内に<br> お返しいたします。</p>
+
+              <p class="c_txt_2">連絡を返さないフリーランスが多い中、<br> ユアコーディングでは定期的な進捗報告など、<br> 社会人としての基本を踏まえて仕事を行なって<br>おります。</p>
+            </div>
+          </div>
+        </div>
+      </article>
+    </section>
+
+    <!------------sesction_3  価格----------------->
+
+    <!-- ----------table のスタイルの調整 ---------->
+    <!-- 各セルに width を指定 -->
+    <!-- 余白は padding で調整 -->
+    <!-- verticale-align で上下中央寄せ出来る -->
+    <!-- text-align で左右中央寄せ出来る -->
+
+
+    <section class="section_3 fadein" id="price">
+      <h3 class="h3">価格</h3>
+      <p class="notes_ttl">PRICE</p>
+      <div class="container">
+        <table class="price_table">
+          <tr>
+            <th class="p_head">HTMLコーディングトップページ</th>
+            <td class="p_td">30.000円〜</td>
+          </tr>
+          <tr>
+            <th class="p_head">HTMLコーディング下層1ページ</th>
+            <td class="p_td">10.000円〜</td>
+          </tr>
+          <tr>
+            <th class="p_head">HTML+WordPressトップページ</th>
+            <td class="p_td">55.000円〜</td>
+          </tr>
+          <tr>
+            <th class="p_head">HTML+WordPress下層1ページ</th>
+            <td class="p_td">15.000円〜</td>
+          </tr>
+
+        </table>
+      </div>
+      <p class="notes_txt">＊詳細な価格はページや仕様によって異なります</p>
+
+    </section>
+
+    <!----------ssection_4   質問-------------->
+    <section class="section_4 fadein">
+
+      <h3 class="h3">よくある質問</h3>
+      <p class="notes_ttl">FAQ</p>
+
+      <div class="container">
+        <article class="faq-2">
+
+          <dl class="faq_box">
+            <dt class="faq_ttl">デザインから一貫してお願いすることは可能でしょうか</dt>
+            <!-- faq_activeは最初から表示させるためのクラス定義 -->
+            <dd class="faq_txt  faq_active">ユアコーディングはコーディングに特化したサービスですので、デザインからお受けすることは基本的にありません。<br>
+              ただデザインを行う際は提携しているデザイナーと連携して対応させていただきますので、別途ご連絡ください。</dd>
+          </dl>
+
+          <dl class="faq_box">
+            <dt class="faq_ttl">WordPressのカスタマイズをお願いすることも可能でしょうか？</dt>
+            <dd class="faq_txt">可能です。ただECサイトなどの場合は構築難易度や工数の関係で綿密にヒアリングさせていただきたく思います。</dd>
+          </dl>
+
+          <dl class="faq_box">
+            <dt class="faq_ttl">コーディングのスピード感が知りたい</dt>
+            <dd class="faq_txt">HTMLレスポンシブ込み5ページで1週間、10ページで2週間、WordPressサイト5ページで2週間、10ページで3週間が目安に なります。</dd>
+          </dl>
+
+        </article>
+      </div>
+    </section>
+
+
+    <!----------section_5 ブログ-------------->
+
+    <!-- 均等に width を指定するのは calc 関数を使う -->
+
+    <section class="section_5 fadein">
+
+      <h3 class="h3">ブログ</h3>
+      <p class="notes_ttl">BLOG</p>
+
+      <div class="container">
+        <article class="blog_area">
+          <div class="blog_card">
+            <img class="card_img" src="your_codeing_img/austin-distel-wawEfYdpkag-unsplash.png" alt="ブログのサムネイル">
+            <p class="card_txt">サイトをリニューアルオープンしました。</p>
+            <p class="card_date">2020.01.23</p>
+          </div>
+
+          <div class="blog_card">
+            <img class="card_img" src="your_codeing_img/dylan-gillis-KdeqA3aTnBY-unsplash.png" alt="ブログのサムネイル">
+            <p class="card_txt">WebサイトでSEO内部施策に適したコー ディングでどれぐらいサイトが早くなるの か検証してみました</p>
+            <p class="card_date">2020.01.24</p>
+          </div>
+
+          <div class="blog_card">
+            <img class="card_img" src="your_codeing_img/brooke-cagle-g1Kr4Ozfoac-unsplash.png" alt="ブログのサムネイル">
+            <p class="card_txt">ユアコーディングではデザイナーの方を 広く募集しています。</p>
+            <p class="card_date">2020.01.25</p>
+          </div>
+
+        </article>
+      </div>
+    </section>
+
+    <!-----------section_6  実績-------------->
+    <section class="section_6 fadein">
+
+      <h3 class="h3">制作実績</h3>
+      <p class="notes_ttl">WORKS</p>
+
+      <!-----------swiper の実装---------------->
+      <!-- カードの幅、高さ、カード間の余白しっかり -->
+      <div class="swiper-container">
+        <div class="swiper-wrapper">
+
+          <div class="swiper-slide">
+            <article class="works_card">
+              <img class="works_img" src="your_codeing_img/hal-gatewood-tZc3vjPCk-Q-unsplash.png" alt="実績の画像">
+              <p class="works_ttl">株式会社サンプル様採用サイトのコーデ ィングを行いました！</p>
+              <div class="works_txt">
+                採用技術：jQuery,Bootstrap4 <br>実装期間：2週間 <br>担当コーダー：石井
+              </div>
+            </article>
+          </div>
+
+          <div class="swiper-slide">
+            <article class="works_card">
+              <img class="works_img" src="your_codeing_img/digital-marketing-1433427_1280-1.png" alt="実績の画像">
+              <p class="works_ttl">株式会社サンプル様採用サイトのコーデ ィングを行いました！</p>
+              <div class="works_txt">
+                採用技術：jQuery,Bootstrap4 <br>実装期間：2週間 <br>担当コーダー：石井
+              </div>
+            </article>
+          </div>
+
+          <div class="swiper-slide">
+            <article class="works_card">
+              <img class="works_img" src="your_codeing_img/arnel-hasanovic-MNd-Rka1o0Q-unsplash.png" alt="実績の画像">
+              <p class="works_ttl">株式会社サンプル様採用サイトのコーデ ィングを行いました！</p>
+              <div class="works_txt">
+                採用技術：jQuery,Bootstrap4 <br>実装期間：2週間 <br>担当コーダー：石井
+              </div>
+            </article>
+          </div>
+
+          <div class="swiper-slide">
+            <article class="works_card">
+              <img class="works_img" src="your_codeing_img/digital-marketing-1433427_1280-1.png" alt="実績の画像">
+              <p class="works_ttl">株式会社サンプル様採用サイトのコーデ ィングを行いました！</p>
+              <div class="works_txt">
+                採用技術：jQuery,Bootstrap4 <br>実装期間：2週間 <br>担当コーダー：石井
+              </div>
+            </article>
+          </div>
+
+          <div class="swiper-slide">
+            <article class="works_card">
+              <img class="works_img" src="your_codeing_img/arnel-hasanovic-MNd-Rka1o0Q-unsplash.png" alt="実績の画像">
+              <p class="works_ttl">株式会社サンプル様採用サイトのコーデ ィングを行いました！</p>
+              <div class="works_txt">
+                採用技術：jQuery,Bootstrap4 <br>実装期間：2週間 <br>担当コーダー：石井
+              </div>
+            </article>
+          </div>
+
+        </div>
+
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-button-next"></div>
+      </div>
+
+
+
+    </section>
+
+
+    <!------section_7   お問い合わせ----------------->
+    <section class="section_7 fadein" id="contact">
+
+      <h3 class="contact_ttl">お問い合わせ</h3>
+      <p class="contact_notes_ttl">CONTACT</p>
+      <p class="contact_txt">コーディングの人出が足りないとき、<br> あなたの力になります</p>
+
+      <!----------form エリア-------------->
+      <div class="form_area">
+        <form
+          action="https://docs.google.com/forms/u/0/d/e/1FAIpQLSe_bABgohsXMMAvPydTeBkksf5QbuVSDJ0SahwJc9i143NuDg/formResponse"
+          class="form_box" action="#" method="post">
+          <p>お名前 <span>必須</span><br>
+            <input type="text" name="entry.2147312665" required></p>
+          <p>メールアドレス <span>必須</span><br>
+            <input type="email" name="entry.902847406" required></p>
+          <p>お問合せ内容 <span>必須</span><br>
+            <input class="textarea" name="entry.320688394" cols="30" rows="5" required></input></p>
+          <p class="check_box"><input class="checkbox" type="checkbox" name="entry.269626830" value="同意" required>
+            プライバシーポリシーに同意する
+          </p>
+
+          <div class="submit_btn">
+            <!-- <a href="#">送信</a> -->
+            <button type="submit" id="js-submit" disabled>送信
+          </div>
+          <p class="end-message">お問い合わせありがとうございました。</p>
+          <p class="false-message">送信失敗です。</p>
+        </form>
+      </div>
+    </section>
+
+  </main>
+
+<!-- ------フッター------- -->
+  <footer>
+    <p class="footer_ttl">ユアコーディング</p>
+
+    <article class="f_notes_txt">
+      <p>プライバシーポリシー</p>
+      <p>個人商取引法に基づく表記</p>
+    </article>
+
+    <article class="copylight">©ユアコーディング, All Rights Reserved.</article>
+
+  </footer>
+
+  <!------Jquery の CDN---------->
+  <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+
+
+  <!-----------------------------
+  swiper(画像をスライドさせるJs)
+  ------------------------------->
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/5.3.7/js/swiper.min.js"></script>
+
+  <script>
+    var swiper = new Swiper('.swiper-container', {
+      //  ↓ 左右の矢印 
+      navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+      },
+      // レスポンシブの記述
+      breakpoints: {
+        // 769px以上の場合
+        769: {
+          slidesPerView: 3.5,
+        },
+        // 426px以上の場合
+        426: {
+          slidesPerView: 2.5,
+        }
+      },
+      //  ↓ 繰り返し表示
+      loop: true,
+      //  ↓ スライドの速さ
+      speed: 800,
+      //  ↓ 表示位置を真ん中に
+      centeredSlides: true,
+      //  ↓ 表示枚数の数 
+      slidesPerView: 1.5,
+      //  ↓ 画像間の余白
+      spaceBetween: 50,
+      //  ↓ 何枚目の画像を表示させるか
+      initialSlide: 2,
+      //  ↓ 自動スライド
+      autoplay: {
+        //  ↓ 自動スライドの時間 
+        delay: 5000,
+        //   ↓ 操作すると自動再生を止める処理
+        disableOnInteraction: true
+      }
+    });
+  </script>
+
+  <!-- // --スライドダウン型 アコーディオンメニュー----------------- -->
+  <!-- // --シンプルに開閉するだけ -->
+  <script>
+    $(function () {
+      // クリックする要素  .faq_ttl  は複数あるので、「each」内で「$(this)」と書いて、クリックされた「.faq_ttl」のみに処理が実行されるように
+      $('.faq_ttl').each(function () {
+        $(this).on('click', function () {
+          // ------「.faq_ttl」がクリックされたタイミングで操作したいのは、その直後の「.faq_txt」だから、セレクタに「$(‘+.faq_txt’,this)」と書いてる。CSSの＋セレクタと同じで、隣り合っているすぐ直後の要素に適用することができる。
+          $("+.faq_txt", this).slideToggle();
+          return false;
+        });
+      });
+    });
+  </script>
+
+  <!-- // スクロールした時にフワッとフェードイン -->
+  <script>
+    $(window).scroll(function () {
+      $('.fadein').each(function () {
+        var elemPos = $(this).offset().top,
+          scroll = $(window).scrollTop(),
+          windowHeight = $(window).height();
+        if (scroll > elemPos - windowHeight + 100) {
+          $(this).addClass('scrollin');
+        }
+      });
+    });
+  </script>
+
+  <script>
+    $(function () {
+      // #で始まるリンクをクリックしたら実行されます
+      //  href="#~~~" と記述した要素をクリックしたら id="~~" と同じ名前で記述した要素にスクロールする 
+      $('a[href^="#"]').click(function () {
+        // スクロールの速度
+        var speed = 230; // ミリ秒で記述
+        // 
+        // クリックしたリンクの場所を定義
+        var href = $(this).attr("href");
+        // スクロールさせる要素の場所
+        var target = $(href == "#" || href == "" ? 'html' : href);
+        // 設定した要素の一番上の位置を定義
+        var position = target.offset().top;
+        // スクロール イベントの記述
+        $('body,html').animate({ scrollTop: position }, speed, 'swing');
+        return false;
+      });
+    });
+  </script>
+
+  <!-- ハンバーガーメニュー内リンク クリックでメニュー閉じる -->
+  <script>
+    $(function () {
+      $('#menu ul li a').on('click', function (event) {
+        $("#menu").slideToggle();
+      });
+    });
+  </script>
+
+  <!-- ハンバーガー アイコン クリックでスライドダウン・アップ -->
+  <script>
+    $("#toggle").click(function () {
+      $(this).toggleClass("on");
+      $("#menu").slideToggle();
+    });
+  </script>
+
+<!-- フォームに入力してないと送信させない処理 -->
+  <script>
+    $(document).ready(function () {
+
+      const $submitBtn = $('#js-submit')
+      $('.form_box input,.form_box textarea').on('change', function () {
+        if (
+          $('.form_box input[type="text"]').val() !== "" &&
+          $('.form_box input[type="email"]').val() !== "" &&
+          $('.form_box input[type="checkbox"]').val() !== "" &&
+          $('.form_box .checkbox').prop('checked') === true
+        ) {
+          $submitBtn.prop('disabled', false);
+
+        } else {
+          $submitBtn.prop('disabled', true);
+        }
+      });
+    });
+  </script>
+
+  <!-- フォーム送信でthanksページに移動する処理 -->
+  <script>
+    $(document).ready(function () {
+
+      $('.form_box').submit(function (event) {
+        var formData = $('.form_box').serialize();
+        $.ajax({
+          url: "https://docs.google.com/forms/u/0/d/e/1FAIpQLSeiu2OXn6fYEOh2-9KW-t0mFtIPBiIbBoSD8RRyaRBxqDNmQQ/formResponse",
+          data: formData,
+          type: "POST",
+          dataType: "xml",
+          statusCode: {
+            0: function () {
+              $(".end-message").slideDown();
+              $(".submit_btn").hide();
+              //window.location.href = "thanks.html";
+            },
+            200: function () {
+              $(".false-message").slideDown();
+            }
+          }
+        });
+        event.preventDefault();
+
+        window.location.href = 'thaks.html'; // 通常の遷移
+        window.open('thaks.html', '_blank'); // 新しいタブを開き、ページを表示
+      });
+
+    });
+  </script>
+
+</body>
+
+</html>
+
+<!-- お問い合わせ送信で自動返信メールの実装の続き -->
+<!-- ポートフォリオ手直し  サンプルページ修正 -->
+<!-- 時間あればブレインダンプ！ -->
