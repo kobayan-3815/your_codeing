@@ -1,0 +1,17 @@
+html{
+  height: 100%;
+}
+
+body{
+  height: 100%;
+  background: transparent linear-gradient(90deg, #63FBD7 0%, #05A5FA 100%) 0% 0% no-repeat padding-box;
+}
+
+.thanks{
+  font-size: 50px;
+  font-weight: 600;
+  color: #fff;
+  text-shadow: 1px 2px 0px #ccc;
+  text-align: center;
+  margin-top: 10%;
+}
